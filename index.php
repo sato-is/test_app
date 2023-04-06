@@ -13,6 +13,7 @@ require_once('functions.php');
 <body>
     welcome hello world
     <div>
+        <!-- httpメソッドを認識していない（POSTのみフォームレッスンで理解している） -->
         <a href="new.php">
             <p>新規作成</p>
         </a>
@@ -25,8 +26,10 @@ require_once('functions.php');
                 <th>更新</th>
                 <th>削除</th>
             </tr>
+            <!-- getTodoListの詳細な要素の型・内容 理解度に応じて仲間で追わせる-->
             <?php foreach (getTodoList() as $todo) : ?>
                 <tr>
+                    <!-- カラム名に対応 -->
                     <td><?= $todo['id']; ?></td>
                     <td><?= $todo['content']; ?></td>
                     <td>

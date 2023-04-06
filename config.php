@@ -1,6 +1,6 @@
 <?php
 
-
+// ここはおまじないなので解説不要
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -20,6 +20,7 @@ function errorHandler($errNo, $errStr, $errFile, $errLine)
 }
 
 // 以下を追記
+// なぜconfigに書くのか（設定値だから）理解度高い場合
 define('DSN', 'mysql:dbname=php_lesson;host=localhost;unix_socket=/tmp/mysql.sock');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
