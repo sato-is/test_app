@@ -1,5 +1,6 @@
 <?php
 require_once('functions.php');
+// $_GETのkeyがどこで決定されるか（クエリパラメータの理解）
 $todo = getSelectedTodo($_GET['id']);
 
 ?>
@@ -13,6 +14,7 @@ $todo = getSelectedTodo($_GET['id']);
 </head>
 
 <body>
+    <!-- 理解度高ければ新規作成とほぼ一緒なのでスキップ -->
     <form action="store.php" method="post">
         <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
         <input type="text" name="content" value="<?= $todo; ?>">

@@ -60,6 +60,17 @@ function deleteTodoData($id)
 {
     $dbh = connectPdo();
     $now = date('Y-m-d H:i:s');
+    // 論理削除と物理削除の違い・メリデメ
+    // 観点
+    // ・データ量
+    // ・データ漏洩
+    // ・復旧容易性（復旧以来のくるデータなのか？）
+    // Twitterの例
+    // アカウントは？→論理削除
+    // ツイートは？→物理削除
+    // MySQLからしたら論理削除や物理削除は関係ない
+    // 身近で論理削除（メール・ファイルはゴミ箱経由だよね）
+    // Googleアカウントとか論理と物理の複合パターンもある
     $sql = 'UPDATE todos SET deleted_at = "' . $now . '" WHERE id = ' . $id;
     $dbh->query($sql);
 }
