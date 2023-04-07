@@ -30,6 +30,7 @@ require_once('functions.php');
             <?php foreach (getTodoList() as $todo) : ?>
                 <tr>
                     <!-- カラム名に対応 -->
+                    <!-- htmlの感覚でechoがないと出力されないことが理解できていない -->
                     <td><?= $todo['id']; ?></td>
                     <td><?= $todo['content']; ?></td>
                     <td>

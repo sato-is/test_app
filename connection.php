@@ -22,6 +22,7 @@ function getAllRecords()
     $dbh = connectPdo();
     $sql = 'SELECT * FROM todos WHERE deleted_at IS NULL';
     // query()の中身var_dumpできるよ（メソッドチェーンを区切ることができるよ）
+    // 変数以外もvar_dump()できる認識が甘いß
     return $dbh->query($sql)->fetchAll();
 }
 
